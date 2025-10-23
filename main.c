@@ -1,35 +1,20 @@
 #include <stdlib.h>
 #include <stdio.h>
-
+#include "function.h"
 
 int main(){
     int key;  //get player inputs
-    int pos_x, pos_y  //get player position(located earlier in vid)
-    int dest_count //for "." cells 
-
-    printf("%s", grid);
-
-    while(/*find end condition*/){
-        switch(key)
-        {
-            case 'z':
-                move_char(pos_x, pos_y, - MAP_WIDTH - 1);
-                break;
-            case 's':
-                move_char(pos_x, pos_y, MAP_WIDTH + 1);
-                break;
-            case 'q':
-                move_char(pos_x, pos_y, - 1);
-                break;
-            case 'd':
-                move_char(pos_x, pos_y, + 1);
-                break;
+    grid[2][2] = 'X'; //place box for debug
+    grid[4][8] = 'O';
+    grid[5][2] = '.';
 
 
-
-        }
-
+    printf("Full grid:\n");
+    for (int i = 0; i < 1; ++i) {
+        printf("%s", grid[i]);
     }
+
+
 
     return 0;
 }
