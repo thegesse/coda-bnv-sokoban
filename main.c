@@ -3,17 +3,28 @@
 #include "function.h"
 
 int main(){
-    int key;  //get player inputs
+    struct player p;
+    p.pos_x = 0;
+    p.pos_y = 0;
+
+    char key;  //get player inputs
     grid[2][2] = 'X'; //place box for debug
     grid[4][8] = 'O';
     grid[5][2] = '.';
 
+    draw_grid();
 
-    printf("Full grid:\n");
-    for (int i = 0; i < 1; ++i) {
-        printf("%s", grid[i]);
+    while (1) {
+    printf("Enter move: ");
+    key = getchar();  // Read a single character
+    getchar();        // Consume the newline left in buffer
+    if (key == 'x') {
+        printf("Exiting game.\n");
+        break;
     }
-
+    movement(&p, key);
+    update(&p);
+    }
 
 
     return 0;
