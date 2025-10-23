@@ -9,7 +9,7 @@ int main(){
 
     char key;  //get player inputs
     grid[2][2] = 'X'; //place box for debug
-    grid[4][8] = 'O'; //hexa =  4F turns to N because hexa - 1 turns to 4E
+    grid[4][8] = 'O'; //O hexa =  4F turns to N because hexa - 1 turns to 4E, and player turns to ! because blank space hexa is 21 and ! hexa is 20
     grid[5][2] = '.';
 
     draw_grid();
@@ -22,6 +22,9 @@ int main(){
         printf("Exiting game.\n");
         break;
     }
+
+    
+    constraints(&p);
     movement(&p, key);
     system("clear");
     update(&p);

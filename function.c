@@ -26,7 +26,7 @@ void draw_grid(){
 }
 
 void update(struct player *p) {
-    grid[p->old_pos_x][p->old_pos_y] -= 1;
+    grid[p->old_pos_x][p->old_pos_y] -= 1; //play with these 
     grid[p->pos_x][p->pos_y] += 1; 
     draw_grid();
 }
@@ -47,5 +47,12 @@ void movement(struct player *p, char key){
         case 'd':
             p->pos_y += 1;
             break;
+    }
+}
+
+void constraints(struct player *p) { //reminder to fix
+    if(grid[p->pos_x][p->pos_y] == '#'){
+        printf("wall");
+
     }
 }
