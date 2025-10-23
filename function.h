@@ -13,12 +13,11 @@ struct player {
     int pos_y;
     int show;
     int movement;
-
 };
 
 void movement(struct player *p, char key);
 
 extern char grid[GRID_WIDTH][GRID_HEIGHT];
 void draw_grid();
-void update();
+void update(struct player *p);
 #endif

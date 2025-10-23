@@ -27,23 +27,21 @@ void draw_grid(){
 
 void update(struct player *p) {
     grid[p->old_pos_x][p->old_pos_y] -= 1;
-    grid[p->pos_x][p->pos_y] += 1;
-    for (int i = 0; i < 1; ++i) {
-        printf("%s", grid[i]);
-    }
+    grid[p->pos_x][p->pos_y] += 1; 
+    draw_grid();
 }
 
 void movement(struct player *p, char key){
     p->old_pos_x = p->pos_x;
     p->old_pos_y = p->pos_y;
     switch(key) {
-        case 'z':
+        case 'w':
             p->pos_x -= 1;
             break;
         case 's':
             p->pos_x += 1;
             break;
-        case 'q':
+        case 'a':
             p->pos_y -= 1;
             break;
         case 'd':
@@ -51,5 +49,3 @@ void movement(struct player *p, char key){
             break;
     }
 }
-
-

@@ -4,12 +4,12 @@
 
 int main(){
     struct player p;
-    p.pos_x = 0;
-    p.pos_y = 0;
+    p.pos_x = 4;
+    p.pos_y = 8;
 
     char key;  //get player inputs
     grid[2][2] = 'X'; //place box for debug
-    grid[4][8] = 'O';
+    grid[4][8] = 'O'; //hexa =  4F turns to N because hexa - 1 turns to 4E
     grid[5][2] = '.';
 
     draw_grid();
@@ -23,9 +23,12 @@ int main(){
         break;
     }
     movement(&p, key);
+    system("clear");
     update(&p);
     }
 
 
     return 0;
 }
+
+
