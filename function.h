@@ -16,10 +16,24 @@ struct player {
     int movement;
 };
 
+struct box {
+    int box_old_pos_x;
+    int box_old_pos_y;
+    int box_pos_x;
+    int box_pos_y;
+    int box_show;
+    int box_movement;
+};
+
+struct goal {
+    int goal_x;
+    int goal_y;
+};
+
 void movement(struct player *p, char key);
 
 extern char grid[GRID_WIDTH][GRID_HEIGHT];
 void draw_grid();
 void update(struct player *p);
-void constraints(struct player *p);
+void constraints(struct player *p, struct box *b, char key);
 #endif

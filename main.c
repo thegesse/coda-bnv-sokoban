@@ -4,34 +4,36 @@
 
 int main(){
     struct player p;
+    struct box b;
     p.pos_x = 4;
     p.pos_y = 8;
-
+    b.box_pos_x = 2;
+    b.box_pos_y = 2;
     char key;  //get player inputs
     grid[2][2] = 'X'; //place box for debug
-    grid[4][8] = 'O'; //O hexa =  4F turns to N because hexa - 1 turns to 4E, and player turns to ! because blank space hexa is 21 and ! hexa is 20
+    grid[4][8] = 'O';
     grid[5][2] = '.';
 
     draw_grid();
 
     while (1) {
-    printf("Enter move: ");
-    key = getchar();  // Read a single character
-    getchar();        // Consume the newline left in buffer
-    if (key == 'x') {
-        printf("Exiting game.\n");
-        break;
-    }
+        printf("Enter move: ");
+        key = getchar();  // Read a single character
+        getchar();        // Consume the newline left in buffer
+        if (key == 'x') {
+            printf("Exiting game.\n");
+            break;
+        }
 
-    
-    constraints(&p);
-    movement(&p, key);
-    system("clear");
-    update(&p);
+        
+
+        movement(&p, key);
+        constraints(&p, &b, key);
+        system("clear");
+        update(&p);
+
     }
 
 
     return 0;
 }
-
-
