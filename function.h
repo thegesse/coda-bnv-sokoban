@@ -27,18 +27,15 @@ struct goal {
     int goal_y;
 };
 
-struct randoms {
-    int random_x;
-    int random_y;
-    int random_box_x;
-    int random_box_y;
-
-};
 
 void movement(struct player *p, char key);
 extern char grid[GRID_WIDTH][GRID_HEIGHT];
 void draw_grid();
-void update(struct player *p);
+void update(struct player *p, struct goal *g);
 void constraints(struct player *p, struct box *b, char key);
 int check_win(struct box *b, struct goal *g);
+int coords();
+int box_coords();
+int check_loss(struct box *b);
+
 #endif
